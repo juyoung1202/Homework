@@ -1,0 +1,24 @@
+abstract class Duck{
+    -flyBehavior:FlyBehavior
+    -quackBehavior:QuackBehavior
+    +swim()
+    +display()
+    setFlyBehavior(FlyBehavior fb)
+    setQuackBehavior(QuackBehavior qb)
+}
+
+Duck <|--MallardDuck
+Duck <|--RedHatDuck
+Duck <|--RubberDuck
+Duck <|--DecoyDuck
+
+Interface QuackBehavior {
+    +quack()
+}
+interface FlyBehavior {
+    +fly()
+}
+FlyBehavior <|.. FlyWithWings
+QuackBehavior <|.. Quack
+Duck .right-> QuackBehavior
+Duck -right-> FlyBehavior
