@@ -8,10 +8,10 @@ abstract class Duck{
     setQuackBehavior(QuackBehavior qb)
 }
 
-Duck <|--MallardDuck
-Duck <|--RedHatDuck
-Duck <|--RubberDuck
-Duck <|--DecoyDuck
+Duck <|-down-MallardDuck
+Duck <|-down-RedHeadDuck
+Duck <|-down-RubberDuck
+Duck <|-down-DecoyDuck
 
 Interface QuackBehavior {
     +quack()
@@ -34,15 +34,28 @@ interface FlyBehavior {
 
 class FlyWithWings{
 
-    +quack()
+    +fly()
 }
 class FlyNoWay{
 
-    +quack()
+    +fly()
 }
 class FlyRocketPowered{
 
-    +quack()
+    +fly()
+}
+
+class MallardDuck{
+	+display()
+}
+class RedHeadDuck{
+	+display()
+}
+class RubberDuck{
+	+display()
+}
+class DecoyDuck{
+	+display()
 }
 
 FlyBehavior <|.. FlyWithWings
@@ -51,6 +64,6 @@ FlyBehavior <|.. FlyRocketPowered
 QuackBehavior <|.. Quack
 QuackBehavior <|.. MuteQuack
 QuackBehavior <|.. Squack
-Duck .right-> QuackBehavior
+Duck -right-> QuackBehavior
 Duck -right-> FlyBehavior
 @enduml
