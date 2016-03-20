@@ -1,0 +1,6 @@
+package headfirst.strategy;
+
+public class MedelDuck extends Duck {
+  
+  
+}

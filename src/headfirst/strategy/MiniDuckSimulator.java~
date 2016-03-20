@@ -1,0 +1,8 @@
+package headfirst.strategy;
+
+public class MiniDuckSimulator implements QuackBehavior{
+  public void quack(){
+    System.put.println("<<조용~>>");
+  }
+  
+}
