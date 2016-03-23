@@ -1,41 +1,11 @@
-@startuml
+S : 
+"클래스는 단 하나의 책임(기능)을 가져야 한다는 원칙”인데 이 프로젝트에서는  turtleComparator - 거북이의 무게를 비교해주는 기능 DateComparator는 날짜를 비교해주는 기능 등 각 클래스 하나에서 한가지 기능만 가지고 있으므로 s를 충족시킵니다.
+O : 
+"모든 소프트웨어어 구성 요소는 확장에 대해서는 개방되어 있지만 수정에 대해서는 페쇄되어 있다"는 원칙으로 이 프로젝트에서 새로운 정렬을 추가하고 싶다면 새로운 정렬 패턴만 재정의 하면 손쉽게 추가가 가능합니다.
+L : 
+ "자식 클래스는 언제나 자신의 부모 클래스를 교체할 수 있다"는 원칙인데 이 프로젝트에서는 못찾았습니다
 
-Comparator <|.down.DateComparator
-Comparator <|.down.IntegerComparator
-Comparator <|.down.StringComparator
-Comparator <|.down.TurtleComparator
-Comparator <|.down.ReverseComparator
-
-class Sorter{
-    +sort(Object[] data, Comparator comp) : void
-}
-class SorterMainV2{
-    +main(String[] args)
-}
-
-interface Comparator{
-    +compare(Object o1, Object o2) : int
-    +equals(Object o) : boolean
-}
-class DateComparator{
-    +compare(Object o1, Object o2) : int
-}
-class IntegerComparator{
-    +compare(Object o1, Object o2) :int
-}
-class StringComparator{
-    +compare(Object o1, Object o2) : int
-}
-class TurtleComparator{
-    +compare(Object o1, Object o2) : int
-}
-class ReverseComparator{
-    -c : Comparator
-    +compare(Object o1, Object o2) : int
-}
-
-Sorter .down.> Comparator
-Sorter <.right. SorterMainV2
-Comparator <.. SorterMainV2
-
-@enduml
+I : 
+"클라이언트에서 사용하지 않는 메서드는 사용해서는 안된다"는 자신이 사용하지 않는 인터페이스는 구현하지 말아야 한다는 원리입니다. 인터페이스에서기능을 구체적으로 작성한 것인데 여기서는 Comparator 
+D :
+"상위 클래스는 하위 클래스에 의존해서는 안된다"는 원칙인데 이 프로젝트에서는 못찾았습니다
