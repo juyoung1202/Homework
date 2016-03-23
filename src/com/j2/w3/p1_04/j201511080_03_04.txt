@@ -1,0 +1,17 @@
+Welcome to DrJava.  Working directory is /Users/macbook/jyk/Code/j16/MyProject/homework/src
+> packge com.j2.w3.p1_03;
+Invalid top level statement
+> package com.j2.w3.p1_03;
+> import com.sd.turtle.WeightTurtle;
+> weightTurtle turtle01 = new weightTurtle(30);
+> weightTurtle turtle02 = new weightTurtle(10);
+> weightTurtle turtle03 = new weightTurtle(40);
+> weightTurtle[] tlist = {turtle01, turtle02, turtle03};
+> Comparator Turtlec = new TurtleComparator();
+> Sorter.sort(tlist, Turtlec);
+> for(int i=0; i<tlist.length; i++){
+System.out.println("weightTurtleArray["+i+"]"+tlist[i].getWeight());}
+weightTurtleArray[0]10
+weightTurtleArray[1]30
+weightTurtleArray[2]40
+> 

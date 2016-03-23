@@ -1,0 +1,41 @@
+@startuml
+
+Comparator <|.down.DateComparator
+Comparator <|.down.IntegerComparator
+Comparator <|.down.StringComparator
+Comparator <|.down.TurtleComparator
+Comparator <|.down.ReverseComparator
+
+class Sorter{
+    +sort(Object[] data, Comparator comp) : void
+}
+class SorterMainV2{
+    +main(String[] args)
+}
+
+interface Comparator{
+    +compare(Object o1, Object o2) : int
+    +equals(Object o) : boolean
+}
+class DateComparator{
+    +compare(Object o1, Object o2) : int
+}
+class IntegerComparator{
+    +compare(Object o1, Object o2) :int
+}
+class StringComparator{
+    +compare(Object o1, Object o2) : int
+}
+class TurtleComparator{
+    +compare(Object o1, Object o2) : int
+}
+class ReverseComparator{
+    -c : Comparator
+    +compare(Object o1, Object o2) : int
+}
+
+Sorter .down.> Comparator
+Sorter <.right. SorterMainV2
+Comparator <.. SorterMainV2
+
+@enduml
