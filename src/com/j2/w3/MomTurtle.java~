@@ -1,0 +1,7 @@
+package com.j1.w3;
+  
+import ch.aplu.turtle.*;
+import java.util.*;
+
+class MomTurtle extends Turtle implements Observer {
+   public void updata(Observable o, Object arg)
