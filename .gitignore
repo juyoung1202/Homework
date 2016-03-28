@@ -1,0 +1,14 @@
+*.class
+lib/
+classes/
+*.png
+*.class
+*.java~
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+*.jar
+*.war
+*.ear
+
